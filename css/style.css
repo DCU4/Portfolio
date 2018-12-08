@@ -59,12 +59,12 @@ body {
   body .about {
     width: 100%;
     height: auto;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     width: 80%;
-    margin: 0% 4%;
-    top: 0;
-    left: 2000px; }
+    margin: 0 auto;
+    position: absolute;
+    top: 0; }
     body .about .bio {
       margin: 40px 0; }
     body .about .contact {
@@ -88,10 +88,13 @@ body {
       display: flex;
       justify-content: space-evenly; }
     body main {
+      display: block;
       align-items: center; }
       body main .work .project {
         margin: 40px auto; }
-      body main .about .bio {
-        text-align: left; } }
+      body main .about {
+        margin: 0 30px; }
+        body main .about .bio {
+          text-align: left; } }
 
 /*# sourceMappingURL=style.css.map */

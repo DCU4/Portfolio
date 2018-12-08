@@ -94,14 +94,13 @@ body {
 	.about {
 		width: 100%;
 		height: auto;
-		display: inline-flex;
+		display: flex;
 		flex-wrap: wrap;
 		width: 80%;
-		margin: 0% 4%;
-		
-		// position: absolute;
+		margin: 0 auto;
+		position: absolute;
 		top:0;
-		left:2000px;
+		// left:2000px;
 
 		.bio {
 			margin: 40px 0;	
@@ -151,7 +150,7 @@ body {
 			}
 		}
 		main {
-			// overflow: visible;
+			display: block;
 			align-items:center;
 			.work {
 				.project {
@@ -159,6 +158,7 @@ body {
 				}
 			}
 			.about {
+				  margin: 0 30px;
 				.bio {
 					text-align: left;
 				}
