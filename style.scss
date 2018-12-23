@@ -1,5 +1,38 @@
 
 
+// @-webkit-keyframes color-change-3x {
+//   0% {
+//     background: rgba(255,255,255,0.50) ;
+//   }
+//   25% {
+//     background: rgba(0,0,0,0.50) ;
+//   }
+//   50% {
+//     background: rgba(255,255,255,0.10);
+//   }
+//   100% {
+//     background: rgba(0,0,0,0.50);
+//   }
+// }
+// @keyframes color-change-3x {
+//    0% {
+//     background: rgba(255,255,255,0.50) ;
+//   }
+//   25% {
+//     background: rgba(0,0,0,0.50) ;
+//   }
+//   50% {
+//     background: rgba(255,255,255,0.10);
+//   }
+//   100% {
+//     background: rgba(0,0,0,0.50);
+//   }
+// }
+
+// background-color: #DCD9D4; 
+//  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
+//  background-blend-mode: soft-light,screen;
+
 *{
 	margin:0;
 	padding: 0;
@@ -12,10 +45,15 @@ html {
 }
 
 body {
-		background: linear-gradient(-45deg, #5E50C6, #3832AF, #1A179E, #5A1782, #160056);
+		// -webkit-animation: color-change-3x 14s linear infinite alternate both;
+	 //  animation: color-change-3x 14s linear infinite alternate both;
+	  background: rgba(255,255,255,0.50) ;
+		// background: linear-gradient(-45deg, #5E50C6, #3832AF, #1A179E, #5A1782, #160056);
+		background-color: #DCD9D4;
+		background-blend-mode: soft-light,screen;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-		color:#EEE;
+		color:#444;
 		margin:2%;
 
 		display: grid;
@@ -30,8 +68,33 @@ body {
 
 	a {
 		text-decoration: none;
-		color:#EEE;
+		color:#444;
 		width: 100%;
+		position:relative;
+	  height: 100px;
+	  // line-height: 100px;
+	  margin: 0 auto;
+	  overflow: hidden;
+	  &::before {
+	  	margin: 5px auto;
+		  width: 0px;
+		  color: #262626;
+		  overflow: hidden;
+		  position: absolute;
+		  content: attr(data-text);
+		  transition: all 0.9s;
+	  }
+	  &:after {
+	  	width:0px;
+	  }
+	  &:hover {
+	  	&::before {
+	  		width:100%;
+	  	}
+	  	&:after {
+	  		width:100%;
+	  	}
+	  }
 	}
 
 	header {
@@ -72,6 +135,7 @@ body {
 		display: flex;
 		flex-wrap: wrap;
 		// position: absolute;
+		// opacity: 1;
 		top:0;
 		left:0;
 		.project {
@@ -92,6 +156,9 @@ body {
 
 
 	.about {
+		h4{
+			margin-bottom: 4%;
+		}
 		width: 100%;
 		height: auto;
 		display: flex;
@@ -100,15 +167,18 @@ body {
 		margin: 0 auto;
 		position: absolute;
 		top:0;
+		opacity: 0;x
 		// left:2000px;
 
 		.bio {
 			margin: 40px 0;	
+
 		}
 
 		.contact {
 			display: flex;
 			margin-top: 4%;
+			position: relative;
 
 			.contact-link {
 				margin-right: 20px;	
@@ -124,12 +194,15 @@ body {
 
 
 	.selected {
-		text-decoration: underline;
+		border-bottom: 1px solid #444;
 	}
 
 	.not-shown {
 		opacity: 0;
 		transition: all .4s;
+	}
+	.shown {
+		opacity: 1;
 	}
 
 }
@@ -143,6 +216,12 @@ body {
 		flex-direction: column;
 		text-align: center;
 		font-size: 1.5rem;
+			a {
+	  	line-height: 100px;
+			  &::before {
+			  	margin: 8px auto;
+			  }
+			}
 		nav {
 			.menu {
 				display: flex;

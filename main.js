@@ -14,9 +14,11 @@ links[i].addEventListener('click',function(){
 			workLink.classList.remove('selected');
 			aboutLink.classList.add('selected');
 			
-			
+
+			$(work).removeClass('shown');
 			$(work).addClass('not-shown');			
-			$(about).removeClass('not-shown');
+			$(about).removeClass('not-shown');	
+			$(about).addClass('shown');
 
 			// $(about).animate({
 			// 	left:'0'
@@ -31,9 +33,12 @@ links[i].addEventListener('click',function(){
 			aboutLink.classList.remove('selected');
 			workLink.classList.add('selected');
 
-
-			$(work).removeClass('not-shown');
+			$(about).removeClass('shown');
 			$(about).addClass('not-shown');
+			$(work).removeClass('not-shown');			
+			$(work).addClass('shown');
+			
+			
 
 			// $(about).animate({
 			// 	left:'2000'

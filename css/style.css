@@ -8,10 +8,12 @@ html {
   font-size: 16px; }
 
 body {
-  background: linear-gradient(-45deg, #5E50C6, #3832AF, #1A179E, #5A1782, #160056);
+  background: rgba(255, 255, 255, 0.5);
+  background-color: #DCD9D4;
+  background-blend-mode: soft-light,screen;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #EEE;
+  color: #444;
   margin: 2%;
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -21,8 +23,26 @@ body {
   /*For JS*/ }
   body a {
     text-decoration: none;
-    color: #EEE;
-    width: 100%; }
+    color: #444;
+    width: 100%;
+    position: relative;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden; }
+    body a::before {
+      margin: 5px auto;
+      width: 0px;
+      color: #262626;
+      overflow: hidden;
+      position: absolute;
+      content: attr(data-text);
+      transition: all 0.9s; }
+    body a:after {
+      width: 0px; }
+    body a:hover::before {
+      width: 100%; }
+    body a:hover:after {
+      width: 100%; }
   body header {
     grid-area: header;
     margin-bottom: 4%; }
@@ -64,19 +84,26 @@ body {
     width: 80%;
     margin: 0 auto;
     position: absolute;
-    top: 0; }
-    body .about .bio {
+    top: 0;
+    opacity: 0; }
+    body .about h4 {
+      margin-bottom: 4%; }
+    body .about x
+    .bio {
       margin: 40px 0; }
     body .about .contact {
       display: flex;
-      margin-top: 4%; }
+      margin-top: 4%;
+      position: relative; }
       body .about .contact .contact-link {
         margin-right: 20px; }
   body .selected {
-    text-decoration: underline; }
+    border-bottom: 1px solid #444; }
   body .not-shown {
     opacity: 0;
     transition: all .4s; }
+  body .shown {
+    opacity: 1; }
 
 @media only screen and (max-width: 720px) {
   body {
@@ -84,6 +111,10 @@ body {
     flex-direction: column;
     text-align: center;
     font-size: 1.5rem; }
+    body a {
+      line-height: 100px; }
+      body a::before {
+        margin: 8px auto; }
     body nav .menu {
       display: flex;
       justify-content: space-evenly; }
