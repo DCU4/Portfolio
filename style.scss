@@ -1,33 +1,33 @@
 
 
-// @-webkit-keyframes color-change-3x {
-//   0% {
-//     background: rgba(255,255,255,0.50) ;
-//   }
-//   25% {
-//     background: rgba(0,0,0,0.50) ;
-//   }
-//   50% {
-//     background: rgba(255,255,255,0.10);
-//   }
-//   100% {
-//     background: rgba(0,0,0,0.50);
-//   }
-// }
-// @keyframes color-change-3x {
-//    0% {
-//     background: rgba(255,255,255,0.50) ;
-//   }
-//   25% {
-//     background: rgba(0,0,0,0.50) ;
-//   }
-//   50% {
-//     background: rgba(255,255,255,0.10);
-//   }
-//   100% {
-//     background: rgba(0,0,0,0.50);
-//   }
-// }
+@-webkit-keyframes color-change-3x {
+  0% {
+    background: rgba(255,255,255,0.50) ;
+  }
+  25% {
+    background: rgba(0,0,0,0.50) ;
+  }
+  50% {
+    background: rgba(255,255,255,0.10);
+  }
+  100% {
+    background: rgba(0,0,0,0.50);
+  }
+}
+@keyframes color-change-3x {
+   0% {
+    background: rgba(255,255,255,0.50) ;
+  }
+  25% {
+    background: rgba(0,0,0,0.50) ;
+  }
+  50% {
+    background: rgba(255,255,255,0.10);
+  }
+  100% {
+    background: rgba(0,0,0,0.50);
+  }
+}
 
 // background-color: #DCD9D4; 
 //  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
@@ -46,8 +46,8 @@ html {
 
 body {
 		// -webkit-animation: color-change-3x 14s linear infinite alternate both;
-	 //  animation: color-change-3x 14s linear infinite alternate both;
-	  background: rgba(255,255,255,0.50) ;
+	  animation: color-change-3x 14s linear infinite alternate both;
+	  	background: rgba(255,255,255,0.50) ;
 		// background: linear-gradient(-45deg, #5E50C6, #3832AF, #1A179E, #5A1782, #160056);
 		background-color: #DCD9D4;
 		background-blend-mode: soft-light,screen;

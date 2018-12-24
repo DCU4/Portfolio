@@ -1,3 +1,23 @@
+@-webkit-keyframes color-change-3x {
+  0% {
+    background: rgba(255, 255, 255, 0.5); }
+  25% {
+    background: rgba(0, 0, 0, 0.5); }
+  50% {
+    background: rgba(255, 255, 255, 0.1); }
+  100% {
+    background: rgba(0, 0, 0, 0.5); } }
+
+@keyframes color-change-3x {
+  0% {
+    background: rgba(255, 255, 255, 0.5); }
+  25% {
+    background: rgba(0, 0, 0, 0.5); }
+  50% {
+    background: rgba(255, 255, 255, 0.1); }
+  100% {
+    background: rgba(0, 0, 0, 0.5); } }
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +28,7 @@ html {
   font-size: 16px; }
 
 body {
+  animation: color-change-3x 14s linear infinite alternate both;
   background: rgba(255, 255, 255, 0.5);
   background-color: #DCD9D4;
   background-blend-mode: soft-light,screen;
@@ -89,7 +110,7 @@ body {
     body .about h4 {
       margin-bottom: 4%; }
     body .about x
-    .bio {
+.bio {
       margin: 40px 0; }
     body .about .contact {
       display: flex;
@@ -127,5 +148,3 @@ body {
         margin: 0 30px; }
         body main .about .bio {
           text-align: left; } }
-
-/*# sourceMappingURL=style.css.map */
