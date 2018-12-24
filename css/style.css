@@ -1,23 +1,3 @@
-@-webkit-keyframes color-change-3x {
-  0% {
-    background: rgba(255, 255, 255, 0.5); }
-  25% {
-    background: rgba(0, 0, 0, 0.5); }
-  50% {
-    background: rgba(255, 255, 255, 0.1); }
-  100% {
-    background: rgba(0, 0, 0, 0.5); } }
-
-@keyframes color-change-3x {
-  0% {
-    background: rgba(255, 255, 255, 0.5); }
-  25% {
-    background: rgba(0, 0, 0, 0.5); }
-  50% {
-    background: rgba(255, 255, 255, 0.1); }
-  100% {
-    background: rgba(0, 0, 0, 0.5); } }
-
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +8,6 @@ html {
   font-size: 16px; }
 
 body {
-  animation: color-change-3x 14s linear infinite alternate both;
   background: rgba(255, 255, 255, 0.5);
   background-color: #DCD9D4;
   background-blend-mode: soft-light,screen;
@@ -45,7 +24,6 @@ body {
   body a {
     text-decoration: none;
     color: #444;
-    width: 100%;
     position: relative;
     height: 100px;
     margin: 0 auto;
@@ -68,14 +46,20 @@ body {
     grid-area: header;
     margin-bottom: 4%; }
     body header .title {
-      font-size: 3rem; }
+      font-size: 3rem;
+      opacity: 0;
+      animation: fade-in-right ease .4s forwards; }
   body nav {
     grid-area: nav; }
     body nav .menu {
       list-style-type: none; }
       body nav .menu .menu-item {
-        margin-bottom: 8%; }
+        margin-bottom: 8%;
+        opacity: 0;
+        animation: fade-in-right ease .8s forwards; }
   body main {
+    opacity: 0;
+    animation: fade-in ease 1.4s forwards;
     grid-area: main;
     width: 100%;
     display: flex;
@@ -87,7 +71,8 @@ body {
       display: flex;
       flex-wrap: wrap;
       top: 0;
-      left: 0; }
+      left: 0;
+      position: relative; }
       body main .work .project {
         box-shadow: 1px 1px 20px 0px #111;
         height: 300px;
@@ -109,8 +94,7 @@ body {
     opacity: 0; }
     body .about h4 {
       margin-bottom: 4%; }
-    body .about x
-.bio {
+    body .about .bio {
       margin: 40px 0; }
     body .about .contact {
       display: flex;
@@ -124,7 +108,8 @@ body {
     opacity: 0;
     transition: all .4s; }
   body .shown {
-    opacity: 1; }
+    opacity: 1;
+    transition: all .4s; }
 
 @media only screen and (max-width: 720px) {
   body {

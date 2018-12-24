@@ -14,18 +14,12 @@ links[i].addEventListener('click',function(){
 			workLink.classList.remove('selected');
 			aboutLink.classList.add('selected');
 			
-
-			$(work).removeClass('shown');
-			$(work).addClass('not-shown');			
-			$(about).removeClass('not-shown');	
-			$(about).addClass('shown');
-
-			// $(about).animate({
-			// 	left:'0'
-			// });
-			// $(work).animate({
-			// 	left:'-2000px'
-			// });
+			$('.about').animate({
+				opacity: '1'
+			});
+			$('.work').animate({
+				opacity: '0'
+			});
 
 
 
@@ -33,19 +27,12 @@ links[i].addEventListener('click',function(){
 			aboutLink.classList.remove('selected');
 			workLink.classList.add('selected');
 
-			$(about).removeClass('shown');
-			$(about).addClass('not-shown');
-			$(work).removeClass('not-shown');			
-			$(work).addClass('shown');
-			
-			
-
-			// $(about).animate({
-			// 	left:'2000'
-			// });
-			// $(work).animate({
-			// 	left:'0'
-			// });
+			$('.about').animate({
+				opacity: '0'
+			});
+			$('.work').animate({
+				opacity: '1'
+			});
 
 		}
 	
