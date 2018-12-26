@@ -8,10 +8,8 @@ html {
   font-size: 16px; }
 
 body {
+  animation: color-change-2 10s linear infinite alternate both;
   background-color: #DCD9D4;
-  background-blend-mode: soft-light,screen;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: #444;
   margin: 2%;
   display: grid;
@@ -96,6 +94,10 @@ body {
       margin-bottom: 4%; }
     body .about .bio {
       margin: 40px 0; }
+      body .about .bio a {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: solid 1px #444; }
     body .about .contact {
       display: flex;
       margin-top: 4%;

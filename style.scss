@@ -10,14 +10,12 @@ html {
 	font-size: 16px;
 }
 
+
 body {
 
-	  // animation: color-change-3x 14s linear infinite alternate both;
+	  animation: color-change-2 10s linear infinite alternate both;
 	  // background: rgba(255,255,255,0.50) ;
 		background-color: #DCD9D4;
-		background-blend-mode: soft-light,screen;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
 		color:#444;
 		margin:2%;
 
@@ -28,7 +26,6 @@ body {
 			"header header"
 			"nav main";
 		justify-content: center;
-
 
 
 	a {
@@ -148,7 +145,11 @@ body {
 
 		.bio {
 			margin: 40px 0;	
-
+				a {
+					padding-bottom: 0px;
+					margin-bottom: 0px;
+					border-bottom: solid 1px #444;
+				}
 		}
 
 		.contact {
