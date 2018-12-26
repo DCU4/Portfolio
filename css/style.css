@@ -8,7 +8,6 @@ html {
   font-size: 16px; }
 
 body {
-  background: rgba(255, 255, 255, 0.5);
   background-color: #DCD9D4;
   background-blend-mode: soft-light,screen;
   background-repeat: no-repeat;
@@ -17,7 +16,7 @@ body {
   margin: 2%;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 100px 800px;
   grid-template-areas: "header header" "nav main";
   justify-content: center;
   /*For JS*/ }
@@ -36,12 +35,13 @@ body {
       position: absolute;
       content: attr(data-text);
       transition: all 0.9s; }
-    body a:after {
-      width: 0px; }
-    body a:hover::before {
-      width: 100%; }
-    body a:hover:after {
-      width: 100%; }
+    @media (pointer: fine) {
+      body a:after {
+        width: 0px; }
+      body a:hover::before {
+        width: 100%; }
+      body a:hover:after {
+        width: 100%; } }
   body header {
     grid-area: header;
     margin-bottom: 4%; }
@@ -70,14 +70,14 @@ body {
       height: auto;
       display: flex;
       flex-wrap: wrap;
-      top: 0;
-      left: 0;
-      position: relative; }
-      body main .work .project {
-        box-shadow: 1px 1px 20px 0px #111;
-        height: 300px;
-        width: 300px;
-        margin: 0 4% 8% 4%; }
+      justify-content: space-between; }
+      body main .work section {
+        padding-bottom: 40px; }
+        body main .work section p {
+          padding-bottom: 10px; }
+        body main .work section .project {
+          height: 400px;
+          width: 400px; }
   body img {
     width: 100%;
     height: 100%;
@@ -85,13 +85,13 @@ body {
   body .about {
     width: 100%;
     height: auto;
-    display: flex;
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
     position: absolute;
     top: 0;
-    opacity: 0; }
+    opacity: 0;
+    display: none; }
     body .about h4 {
       margin-bottom: 4%; }
     body .about .bio {
@@ -127,8 +127,10 @@ body {
     body main {
       display: block;
       align-items: center; }
-      body main .work .project {
-        margin: 40px auto; }
+      body main .work {
+        flex-direction: column; }
+        body main .work .project {
+          margin: 16px auto 40px; }
       body main .about {
         margin: 0 30px; }
         body main .about .bio {

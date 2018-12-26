@@ -12,8 +12,8 @@ html {
 
 body {
 
-	  	// animation: color-change-3x 14s linear infinite alternate both;
-	  	background: rgba(255,255,255,0.50) ;
+	  // animation: color-change-3x 14s linear infinite alternate both;
+	  // background: rgba(255,255,255,0.50) ;
 		background-color: #DCD9D4;
 		background-blend-mode: soft-light,screen;
 		background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body {
 
 		display: grid;
 		grid-template-columns: 1fr 4fr;
-		grid-template-rows: 1fr 6fr;
+		grid-template-rows: 100px 800px;
 		grid-template-areas: 
 			"header header"
 			"nav main";
@@ -48,9 +48,11 @@ body {
 		  content: attr(data-text);
 		  transition: all 0.9s;
 	  }
-	  &:after {
-	  	width:0px;
-	  }
+	  @media (pointer: fine) {
+		  &:after {
+		  	width:0px;
+		  
+		}
 	  &:hover {
 	  	&::before {
 	  		width:100%;
@@ -60,6 +62,8 @@ body {
 	  	}
 	  }
 	}
+	}
+
 
 	header {
 		grid-area: header;
@@ -99,24 +103,26 @@ body {
 		display: flex;
 		overflow: hidden;
 		position: relative;
-
+		
 		.work {
 			width: 100%;
 			height: auto;
 			display: flex;
 			flex-wrap: wrap;
-			top:0;
-			left:0;
-			position: relative;
-			// opacity:1;
+			justify-content: space-between;
+			section {
+				  padding-bottom: 40px;
+				p {
+					padding-bottom: 10px;
+				}
 			.project {
-				box-shadow: 1px 1px 20px 0px #111;
-				height: 300px;
-				width: 300px;
-				margin: 0 4% 8% 4%;	
+				
+				height: 400px;
+    		width: 400px;
 			}
 		}
 	}
+}
 
 	img {
 		width: 100%;
@@ -132,13 +138,13 @@ body {
 		}
 			width: 100%;
 			height: auto;
-			display: flex;
 			flex-wrap: wrap;
 			width: 80%;
 			margin: 0 auto;
 			position: absolute;
 			top:0;
 			opacity: 0;
+			display: none;
 
 		.bio {
 			margin: 40px 0;	
@@ -203,8 +209,9 @@ body {
 			display: block;
 			align-items:center;
 			.work {
+				flex-direction: column;
 				.project {
-					margin: 40px auto;
+					margin: 16px auto 40px;
 				}
 			}
 			.about {
