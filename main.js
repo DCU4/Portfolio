@@ -11,6 +11,7 @@ for(var i = 0; i<links.length; i++){
 links[i].addEventListener('click',function(){
 
 		if(this === aboutLink){
+
 			workLink.classList.remove('selected');
 			aboutLink.classList.add('selected');
 			
@@ -24,10 +25,8 @@ links[i].addEventListener('click',function(){
 			}).css({
 				display: 'none'
 			});
-
-
-
 		} else {
+
 			aboutLink.classList.remove('selected');
 			workLink.classList.add('selected');
 
@@ -41,20 +40,13 @@ links[i].addEventListener('click',function(){
 			}).css({
 				display: 'none'
 			});
-
-		}
-
-		// if (about.style.opacity === '0') {
-		// 	about.style.display = 'none';
-		// 	console.log(about);
-		// } else {
-		// 	about.style.display = 'flex';
-		// 	console.log(about);
-		// }
-	
-});
-
+		}	
+	});
 }
+
+// $('section > p').on('mouseenter',function(){
+// 	$('.project').addClass('shown');
+// })
 
 
 

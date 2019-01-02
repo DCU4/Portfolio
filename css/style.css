@@ -14,7 +14,7 @@ body {
   margin: 2%;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 100px 800px;
+  grid-template-rows: 100px 4fr;
   grid-template-areas: "header header" "nav main";
   justify-content: center;
   /*For JS*/ }
@@ -32,7 +32,7 @@ body {
       overflow: hidden;
       position: absolute;
       content: attr(data-text);
-      transition: all 0.9s; }
+      transition: all 0.4s; }
     @media (pointer: fine) {
       body a:after {
         width: 0px; }
@@ -68,10 +68,13 @@ body {
       height: auto;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between; }
+      justify-content: space-around; }
       body main .work section {
+        position: relative;
         padding-bottom: 40px; }
         body main .work section p {
+          font-size: 34px;
+          text-transform: uppercase;
           padding-bottom: 10px; }
         body main .work section .project {
           height: 400px;
@@ -85,9 +88,6 @@ body {
     height: auto;
     flex-wrap: wrap;
     width: 80%;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
     opacity: 0;
     display: none; }
     body .about h4 {
