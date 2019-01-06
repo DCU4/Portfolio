@@ -49,10 +49,15 @@ links[i].addEventListener('click',function(){
 
 
 
-var projects = $('.projects');
+var projects = $('.project');
 
 
 $('section > p').on('mouseover mouseout', function(){
 	$(this).next().toggleClass('shown');
+	console.log('hover');
+});
+
+$('section').on('mouseover mouseout', function(){
+	$(this).toggleClass('on-top');
 });
 

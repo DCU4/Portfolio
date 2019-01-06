@@ -13,7 +13,7 @@ body {
   color: #444;
   margin: 2%;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 110px 4fr;
   grid-template-rows: 100px 4fr;
   grid-template-areas: "header header" "nav main";
   justify-content: center;
@@ -68,23 +68,29 @@ body {
       height: auto;
       display: flex;
       flex-wrap: wrap;
-      flex-direction: column;
       justify-content: space-around;
-      padding: 0 80px; }
+      padding: 0 80px;
+      flex-direction: column;
+      position: relative; }
       body main .work section {
-        position: relative;
         padding-bottom: 40px;
         display: flex;
         justify-content: space-between;
-        align-items: center; }
+        align-items: center;
+        z-index: 0; }
+        body main .work section.on-top {
+          z-index: 100; }
         body main .work section p {
           font-size: 50px;
           text-transform: uppercase;
           padding-bottom: 10px; }
         body main .work section div {
           opacity: 0;
-          height: 300px;
-          width: 300px; }
+          height: 400px;
+          width: 400px;
+          position: absolute;
+          right: 70px;
+          top: 0; }
           body main .work section div.shown {
             opacity: 1;
             transition: all .4s; }
@@ -139,9 +145,15 @@ body {
         padding: 0; }
         body main .work section {
           flex-direction: column; }
+          body main .work section p {
+            font-size: 34px;
+            padding-bottom: 0px; }
           body main .work section .project {
             opacity: 1;
-            margin: 16px auto 40px; }
+            margin: 16px auto 40px;
+            position: unset;
+            height: 300px;
+            width: 300px; }
       body main .about {
         margin: 0 30px; }
         body main .about .bio {
