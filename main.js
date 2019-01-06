@@ -11,7 +11,6 @@ for(var i = 0; i<links.length; i++){
 links[i].addEventListener('click',function(){
 
 		if(this === aboutLink){
-
 			workLink.classList.remove('selected');
 			aboutLink.classList.add('selected');
 			
@@ -25,8 +24,10 @@ links[i].addEventListener('click',function(){
 			}).css({
 				display: 'none'
 			});
-		} else {
 
+
+
+		} else {
 			aboutLink.classList.remove('selected');
 			workLink.classList.add('selected');
 
@@ -40,13 +41,18 @@ links[i].addEventListener('click',function(){
 			}).css({
 				display: 'none'
 			});
-		}	
-	});
+
+		}
+});
+
 }
 
-// $('section > p').on('mouseenter',function(){
-// 	$('.project').addClass('shown');
-// })
 
 
+var projects = $('.projects');
+
+
+$('section > p').on('mouseover mouseout', function(){
+	$(this).next().toggleClass('shown');
+});
 

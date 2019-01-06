@@ -68,17 +68,26 @@ body {
       height: auto;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around; }
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 80px; }
       body main .work section {
         position: relative;
-        padding-bottom: 40px; }
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
         body main .work section p {
-          font-size: 34px;
+          font-size: 50px;
           text-transform: uppercase;
           padding-bottom: 10px; }
-        body main .work section .project {
-          height: 400px;
-          width: 400px; }
+        body main .work section div {
+          opacity: 0;
+          height: 300px;
+          width: 300px; }
+          body main .work section div.shown {
+            opacity: 1;
+            transition: all .4s; }
   body img {
     width: 100%;
     height: 100%;
@@ -109,9 +118,6 @@ body {
   body .not-shown {
     opacity: 0;
     transition: all .4s; }
-  body .shown {
-    opacity: 1;
-    transition: all .4s; }
 
 @media only screen and (max-width: 720px) {
   body {
@@ -130,10 +136,17 @@ body {
       display: block;
       align-items: center; }
       body main .work {
-        flex-direction: column; }
-        body main .work .project {
-          margin: 16px auto 40px; }
+        padding: 0; }
+        body main .work section {
+          flex-direction: column; }
+          body main .work section .project {
+            opacity: 1;
+            margin: 16px auto 40px; }
       body main .about {
         margin: 0 30px; }
         body main .about .bio {
-          text-align: left; } }
+          text-align: left; }
+          body main .about .bio a {
+            line-height: 0;
+            padding: 0;
+            margin: 0; } }

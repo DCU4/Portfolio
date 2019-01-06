@@ -48,7 +48,6 @@ body {
 	  @media (pointer: fine) {
 		  &:after {
 		  	width:0px;
-		  
 		}
 	  &:hover {
 	  	&::before {
@@ -106,18 +105,30 @@ body {
 			height: auto;
 			display: flex;
 			flex-wrap: wrap;
+			flex-direction: column;
 			justify-content: space-around;
+			padding: 0 80px;
 			section {
 				position: relative;
-			  padding-bottom: 40px;
+		  	padding-bottom: 40px;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
 				p {
-					font-size: 34px;
+					font-size: 50px;
 					text-transform: uppercase;
 					padding-bottom: 10px;
+
 				}
-				.project {
-					height: 400px;
-    			width: 400px;
+				div {
+					opacity:0;
+					height: 300px;
+    			width: 300px;
+    			&.shown {
+						opacity: 1;
+						transition: all .4s;
+					}
+
 				}
 		}
 	}
@@ -177,11 +188,7 @@ body {
 		opacity: 0;
 		transition: all .4s;
 	}
-	.shown {
-		opacity: 1;
-		transition: all .4s;
-	}
-
+	
 }
 
 
@@ -209,15 +216,27 @@ body {
 			display: block;
 			align-items:center;
 			.work {
-				flex-direction: column;
-				.project {
-					margin: 16px auto 40px;
+				padding:0;
+				section {
+					flex-direction: column;
+					.project {
+						opacity: 1;
+						margin: 16px auto 40px;
+					}
 				}
 			}
 			.about {
 				  margin: 0 30px;
 				.bio {
 					text-align: left;
+					a{
+						line-height: 0;
+						padding: 0;
+						margin: 0;
+						&:after {
+
+						}
+					}
 				}
 			}
 		}
