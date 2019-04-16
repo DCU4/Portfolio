@@ -29,11 +29,11 @@ body {
 	.container {
 		display: grid;
 		grid-template-columns: 110px 4fr;
-		grid-template-rows: 100px 4fr 4fr;
+		grid-template-rows: 100px 2fr 3fr;
     grid-template-areas:
     "header header"
-    "nav work"
-    "nav about";
+    "nav about"
+    "nav work";
 
 
 	a {
@@ -42,7 +42,7 @@ body {
 		// width: 100%;
 		position: relative;
 		height: 100px;
-		margin: 0 auto;
+		// margin: 0 auto;
 		overflow: hidden;
 
 		&::before {
@@ -113,7 +113,7 @@ body {
 		// width: 100%;
 		// display: flex;
 		// overflow: hidden;
-    // position: relative;
+    position: relative;
     // padding: 0 80px;
 
 		.work {
@@ -125,7 +125,7 @@ body {
 			justify-content: space-around;
 
 			flex-direction: column;
-			position: relative;
+			// position: relative;
 
 			section {
 
@@ -145,6 +145,7 @@ body {
 					padding-bottom: 10px;
           &:hover ~ .project {
             opacity: 1;
+            z-index: 100;
           }
 				}
 
@@ -174,7 +175,7 @@ body {
 		width: 100%;
 		height: auto;
 		flex-wrap: wrap;
-		width: 80%;
+		// width: 80%;
 		// opacity: 0;
     // display: none;
     h4 {

@@ -6,7 +6,7 @@ export const Work = (props) => {
 
             <div className="work info">
                 <section>
-                    <p><a data-text="_________" href={props.link}>{props.title}</a></p>
+                    <p><a data-text="__________________" href={props.link}>{props.title}</a></p>
                     <div className="project">
                         <a href={props.link}><img src={props.img} /></a>
                     </div>

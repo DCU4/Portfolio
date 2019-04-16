@@ -17,17 +17,22 @@ class Container extends Component {
       aboutShowing: true
       // change class name??
     });
+    console.log(this.state);
   }
   render() {
 
     return (
       <div className="container">
         <header>
-          <h1 class="title"><a href="index.html">Dylan Connor</a></h1>
+          <h1 className="title"><a href="/">Dylan Connor</a></h1>
         </header>
         <Nav
-          onClick={this.handleChange}
+          // onClick={this.handleChange}
+          className="link "
+          changeDisplay="test"
+
         />
+        <About />
         <main>
           <Work
             title='J.Walls'
@@ -42,10 +47,10 @@ class Container extends Component {
           <Work
             title='Avnoe'
             link='https://kee-app.herokuapp.com/login'
-            img='img/jwalls-gif.gif'
+            img='img/drawing-upload-final.gif'
           />
         </main>
-        <About />
+
 
 
 
