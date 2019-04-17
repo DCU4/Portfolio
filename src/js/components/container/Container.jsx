@@ -37,17 +37,17 @@ class Container extends Component {
           <Work
             title='J.Walls'
             link='https://dcu4.github.io/DCU4.github.io-J_Walls/'
-            img='img/jwalls-gif.gif'
+            img='/img/jwalls-gif.gif'
           />
           <Work
             title='Esther Rivas'
             link='https://dcu4.github.io/DCU4.github.io-Esther-Rivas/index.html'
-            img='img/esther.gif'
+            img='/img/esther.gif'
           />
           <Work
             title='Avnoe'
             link='https://kee-app.herokuapp.com/login'
-            img='img/drawing-upload-final.gif'
+            img='/img/drawing-upload-final.gif'
           />
         </main>
 
