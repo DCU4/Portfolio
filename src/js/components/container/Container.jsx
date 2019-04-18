@@ -4,21 +4,21 @@ import Nav from "../presentational/Nav.jsx";
 import About from "../presentational/About.jsx";
 import { Work } from "../presentational/Work.jsx";
 class Container extends Component {
-  constructor() {
-    super();
-    this.state = {
-      aboutShowing: false
+  constructor(props) {
+    super(props);
+    // this.state = {
+    //   isActive: false
 
-    };
-    this.handleChange = this.handleChange.bind(this);
+    // };
+    // this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event) {
-    this.setState({
-      aboutShowing: true
-      // change class name??
-    });
-    console.log(this.state);
-  }
+  // handleChange() {
+  //   this.setState({
+  //     isActive: true
+  //     // change class name??
+  //   }, () => console.log(this.state));
+
+  // }
   render() {
 
     return (
@@ -28,9 +28,6 @@ class Container extends Component {
           <h1 className="title"><a href="/">Dylan Connor</a></h1>
         </header>
         <Nav
-          // onClick={this.handleChange}
-          className="link "
-          changeDisplay="test"
 
         />
         <About />

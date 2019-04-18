@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Nav extends Component {
+export default class About extends Component {
 
     render() {
         const contactInfo = [
@@ -18,7 +18,7 @@ export default class Nav extends Component {
             }
 
         ];
-        const contactItems = contactInfo.map((items) => <a data-text="_______" href={items.link} className="contact-link">{items.title}</a>)
+        const contactItems = contactInfo.map((items,i) => <a key={i} data-text="_______" href={items.link} className="contact-link">{items.title}</a>)
         return (
 
             <div className="about info">
