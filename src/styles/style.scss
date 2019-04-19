@@ -158,11 +158,12 @@ body {
 					}
 
 					.project {
-						opacity: 0;
+						opacity: 1;
 						height: 500px;
 						width: 500px;
 
 						@media only screen and (min-width: 1080px) {
+							opacity: 0;
 							height: 400px;
 							width: 400px;
 						}
