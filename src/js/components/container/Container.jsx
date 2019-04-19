@@ -6,20 +6,31 @@ import { Work } from "../presentational/Work.jsx";
 class Container extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isActive: false
-
-    // };
-    // this.handleChange = this.handleChange.bind(this);
+    this.showWork = this.showWork.bind(this);
+    this.showAbout = this.showAbout.bind(this);
+    this.state = {
+      isAboutShowing: false
+    };
   }
-  // handleChange() {
-  //   this.setState({
-  //     isActive: true
-  //     // change class name??
-  //   }, () => console.log(this.state));
 
-  // }
+  showWork() {
+
+
+    this.setState({
+      isAboutShowing: false
+    }, () => console.log(this.state));
+  }
+
+  showAbout() {
+
+    this.setState({
+      isAboutShowing: true
+    }, () => console.log(this.state));
+  }
+
   render() {
+    const isAboutShowing = this.state.isAboutShowing;
+
 
     return (
 
@@ -28,10 +39,20 @@ class Container extends Component {
           <h1 className="title"><a href="/">Dylan Connor</a></h1>
         </header>
         <Nav
+          onClick={isAboutShowing ? this.showWork : this.showAbout}
 
         />
-        <About />
-        <main>
+
+        {isAboutShowing ? (
+          <About />
+        ) : (
+          <main>
+
+          <Work
+            title='Avnoe'
+            link='https://kee-app.herokuapp.com/login'
+            img='./img/drawing-upload-final.gif'
+          />
           <Work
             title='J.Walls'
             link='https://dcu4.github.io/DCU4.github.io-J_Walls/'
@@ -42,15 +63,8 @@ class Container extends Component {
             link='https://dcu4.github.io/DCU4.github.io-Esther-Rivas/index.html'
             img='./img/esther.gif'
           />
-          <Work
-            title='Avnoe'
-            link='https://kee-app.herokuapp.com/login'
-            img='./img/drawing-upload-final.gif'
-          />
         </main>
-
-
-
+        )}
 
       </div>
 
