@@ -1,267 +1,253 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	font-family: 'Avenir', sans-serif;
-	font-size: 16px;
+  font-family: "Avenir", sans-serif;
+  font-size: 16px;
 }
-
 
 body {
+  animation: color-change-2 10s linear infinite alternate both;
+  // background: rgba(255,255,255,0.50) ;
+  // background-color: #DCD9D4;
+  background: linear-gradient(-90deg, #dcd9d4, #fff);
+  color: #444;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
 
-	animation: color-change-2 10s linear infinite alternate both;
-	// background: rgba(255,255,255,0.50) ;
-	// background-color: #DCD9D4;
-	background: linear-gradient(-90deg, #DCD9D4, #fff);
-	color: #444;
-	width: 90%;
-	margin: 0 auto;
+  .container {
+    display: flex;
+    flex-direction: column;
 
-	justify-content: center;
+    @media only screen and (min-width: 1080px) {
+      display: grid;
+      grid-template-columns: 110px 4fr;
+      grid-template-rows: 150px 3fr;
+      grid-template-areas:
+        "header header"
+        "nav info";
+    }
 
-	.container {
-		display: flex;
-		flex-direction: column;
+    a {
+      text-decoration: none;
+      color: #444;
+      // width: 100%;
+      position: relative;
+      height: 100px;
+      // margin: 0 auto;
+      overflow: hidden;
 
-		@media only screen and (min-width: 1080px) {
-			display: grid;
-			grid-template-columns: 110px 4fr;
-			grid-template-rows: 150px 3fr;
-			grid-template-areas:
-				"header header"
-				"nav info";
-		}
+      &::before {
+        margin: 5px auto;
+        width: 0px;
+        color: #262626;
+        overflow: hidden;
+        position: absolute;
+        content: attr(data-text);
+        transition: all 0.4s;
+      }
 
-		a {
-			text-decoration: none;
-			color: #444;
-			// width: 100%;
-			position: relative;
-			height: 100px;
-			// margin: 0 auto;
-			overflow: hidden;
+      @media (pointer: fine) {
+        &:after {
+          width: 0px;
+        }
 
-			&::before {
-				margin: 5px auto;
-				width: 0px;
-				color: #262626;
-				overflow: hidden;
-				position: absolute;
-				content: attr(data-text);
-				transition: all 0.4s;
-			}
+        &:hover {
+          &::before {
+            width: 100%;
+          }
 
-			@media (pointer: fine) {
-				&:after {
-					width: 0px;
-				}
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
 
-				&:hover {
-					&::before {
-						width: 100%;
-					}
+    header {
+      grid-area: header;
+      margin: 4% 0;
 
-					&:after {
-						width: 100%;
-					}
-				}
-			}
-		}
+      @media only screen and (min-width: 1080px) {
+        margin: 0;
+      }
 
+      .title {
+        font-size: 3rem;
+        opacity: 0;
+        text-align: center;
+        animation: fade-in-right ease 0.4s forwards;
+      }
+    }
 
-		header {
-			grid-area: header;
-			margin: 4% 0;
+    nav {
+      @media only screen and (min-width: 1080px) {
+        grid-area: nav;
+      }
 
-			@media only screen and (min-width: 1080px) {
-				margin: 0;
-			}
+      .menu {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
 
-			.title {
-				font-size: 3rem;
-				opacity: 0;
-				text-align: center;
-				animation: fade-in-right ease .4s forwards;
-			}
-		}
+        @media only screen and (min-width: 1080px) {
+          flex-direction: column;
+        }
 
+        .menu-item {
+          margin-bottom: 8%;
+          opacity: 0;
+          animation: fade-in-right ease 0.8s forwards;
 
-		nav {
+          a {
+            font-size: 2em;
 
-			@media only screen and (min-width: 1080px) {
-				grid-area: nav;
-			}
+            @media only screen and (min-width: 1080px) {
+              font-size: 1em;
+            }
+          }
+        }
+      }
+    }
 
-			.menu {
-				display: flex;
-				justify-content: space-evenly;
-				list-style-type: none;
+    main {
+      position: relative;
 
-				@media only screen and (min-width: 1080px) {
-					flex-direction: column;
-				}
+      .work {
+        grid-area: info;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: column;
 
-				.menu-item {
-					margin-bottom: 8%;
-					opacity: 0;
-					animation: fade-in-right ease .8s forwards;
+        section {
+          padding-bottom: 80px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 0;
+          flex-direction: column;
 
-					a {
-						font-size: 2em;
+          @media only screen and (min-width: 1080px) {
+            flex-direction: row;
+          }
 
-						@media only screen and (min-width: 1080px) {
-							font-size: 1em;
-						}
-					}
-				}
-			}
-		}
+          p {
+            font-size: 50px;
+            text-transform: uppercase;
+            padding-bottom: 10px;
 
+            &:hover ~ .project {
+              opacity: 1;
+              z-index: 100;
+            }
+          }
 
-		main {
-			position: relative;
+          .project {
+            opacity: 1;
+            height: 500px;
+            width: 500px;
+            transition: all 0.3s;
 
-			.work {
-				grid-area: info;
-				width: 100%;
-				height: auto;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-around;
-				flex-direction: column;
+            @media only screen and (min-width: 1080px) {
+              opacity: 0;
+              height: 400px;
+              width: 400px;
+            }
 
+            @media only screen and (min-width: 1080px) {
+              position: absolute;
+              top: 0;
+              right: 70px;
+            }
+          }
+        }
+      }
+    }
 
-				section {
-					padding-bottom: 80px;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					z-index: 0;
-					flex-direction: column;
+    img {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+    }
 
-					@media only screen and (min-width: 1080px) {
-						flex-direction: row;
-					}
+    .about {
+      grid-area: info;
+      height: auto;
+      flex-wrap: wrap;
 
-					p {
-						font-size: 50px;
-						text-transform: uppercase;
-						padding-bottom: 10px;
+      h4 {
+        margin-bottom: 4%;
+      }
 
-						&:hover~.project {
-							opacity: 1;
-							z-index: 100;
-						}
-					}
+      .bio {
+        margin: 40px 0;
 
-					.project {
-						opacity: 1;
-						height: 500px;
-						width: 500px;
+        a {
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+          border-bottom: solid 1px #444;
+        }
+      }
 
-						@media only screen and (min-width: 1080px) {
-							opacity: 0;
-							height: 400px;
-							width: 400px;
-						}
+      .contact {
+        display: flex;
+        margin-top: 4%;
+        position: relative;
 
-						transition: all .3s;
+        .contact-link {
+          margin-right: 20px;
+          font-size: 2em;
 
-						@media only screen and (min-width: 1080px) {
-							position: absolute;
-							top: 0;
-							right: 70px;
-						}
-					}
-				}
-			}
-		}
+          @media only screen and (min-width: 1080px) {
+            font-size: 1em;
+          }
+        }
+      }
+    }
 
-		img {
-			width: 100%;
-			height: 100%;
-			margin: auto
-		}
+    /*For JS*/
 
-
-		.about {
-			grid-area: info;
-			height: auto;
-			flex-wrap: wrap;
-
-			h4 {
-				margin-bottom: 4%;
-			}
-
-			.bio {
-				margin: 40px 0;
-
-				a {
-					padding-bottom: 0px;
-					margin-bottom: 0px;
-					border-bottom: solid 1px #444;
-				}
-			}
-
-			.contact {
-				display: flex;
-				margin-top: 4%;
-				position: relative;
-
-				.contact-link {
-					margin-right: 20px;
-					font-size: 2em;
-
-					@media only screen and (min-width: 1080px) {
-						font-size: 1em;
-					}
-				}
-			}
-		}
-
-		/*For JS*/
-
-		.selected {
-			border-bottom: 1px solid #444;
-		}
-
-
-	}
+    .selected {
+      border-bottom: 1px solid #444;
+    }
+  }
 }
 
-
-
 @keyframes fade-in-right {
-	from {
-		opacity: 0;
-		transform: translateX(-15px);
-	}
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
 
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes grow-left {
-	from {
-		transform: scaleX(0);
-	}
+  from {
+    transform: scaleX(0);
+  }
 
-	to {
-		transform: scaleX(1);
-	}
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes fade-in {
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
