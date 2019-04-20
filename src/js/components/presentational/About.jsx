@@ -18,7 +18,7 @@ export default class About extends Component {
             }
 
         ];
-        const contactItems = contactInfo.map((items,i) => <a key={i} data-text="_______" href={items.link} className="contact-link">{items.title}</a>)
+        const contactItems = contactInfo.map((items,i) => <a key={i} data-text="__________" href={items.link} className="contact-link">{items.title}</a>)
         return (
 
             <div className="about info">

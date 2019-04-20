@@ -7,7 +7,7 @@ export default class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: active,
+      isActive: false
       // isNotActive: notActive
 
     };
@@ -15,9 +15,8 @@ export default class Nav extends Component {
   }
   handleChange() {
     this.setState({
-      isActive: this.state.isActive == ' selected' ? '' : ' selected',
+      isActive: this.state.isActive ? false : true
       
-
     });
   }
 
@@ -26,7 +25,7 @@ export default class Nav extends Component {
     const navList = [
       {
         title: 'Work',
-        class: this.state.isActive
+        class: !this.state.isActive 
       },
       {
         title:'About',
@@ -35,8 +34,8 @@ export default class Nav extends Component {
 
     ];
     const navItems = navList.map((items,i) =>
-    <li onClick={this.props.onClick} key={i} className="menu-item ">
-      <a onClick={this.handleChange}  data-text="_______" className={'link'+items.class}  href="#">{items.title}</a>
+    <li onClick={items.class === true ? null : this.props.onClick} key={i} className="menu-item ">
+      <a onClick={ items.class === true ? null : this.handleChange}  data-text="_______" className={'link'+(items.class === true ? ' selected' : '')}  href="#">{items.title}</a>
     </li>
     )
     return (

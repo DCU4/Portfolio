@@ -127,26 +127,36 @@ body {
         flex-direction: column;
 
         section {
-          padding-bottom: 80px;
+          padding-bottom: 50px;
           display: flex;
-          justify-content: space-between;
           align-items: center;
           z-index: 0;
           flex-direction: column;
 
           @media only screen and (min-width: 1080px) {
-            flex-direction: row;
+            align-items:unset;
           }
 
-          p {
+          h1 {
             font-size: 50px;
             text-transform: uppercase;
             padding-bottom: 10px;
+            font-weight: 300;
 
             &:hover ~ .project {
               opacity: 1;
               z-index: 100;
             }
+            &:hover ~ p {
+              opacity: 1;
+            }
+          }
+          p {
+            opacity: 0;
+            font-size: 1.25em;
+            transition: all 0.4s;
+            width: 50%;
+            
           }
 
           .project {
@@ -154,6 +164,7 @@ body {
             height: 500px;
             width: 500px;
             transition: all 0.3s;
+            transition-delay: 0.1s;
 
             @media only screen and (min-width: 1080px) {
               opacity: 0;
