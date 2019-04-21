@@ -14,6 +14,7 @@ export default class Nav extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange() {
+    // console.log(e.target)
     this.setState({
       isActive: this.state.isActive ? false : true
       
@@ -31,7 +32,6 @@ export default class Nav extends Component {
         title:'About',
         class: this.state.isActive
       }
-
     ];
     const navItems = navList.map((items,i) =>
     <li onClick={items.class === true ? null : this.props.onClick} key={i} className="menu-item ">
