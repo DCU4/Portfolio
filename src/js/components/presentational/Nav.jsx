@@ -14,7 +14,6 @@ export default class Nav extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange() {
-    // console.log(e.target)
     this.setState({
       isActive: this.state.isActive ? false : true
       
