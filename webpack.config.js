@@ -1,5 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
+  output: {
+    path: __dirname + '/docs',
+  },
   module: {
     rules: [
       {
