@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/DCU4/DCU4.github.io-Portfolio/issues"
   },
-  "homepage": "https://github.com/DCU4/DCU4.github.io-Portfolio",
+  "homepage": "https://github.com/DCU4/Portfolio",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
