@@ -41,19 +41,19 @@ class Container extends Component {
             <Work
               title="Avnoe"
               link="https://kee-app.herokuapp.com/login"
-              img="/drawing-upload-final.gif"
+              img="/img/drawing-upload-final.gif"
               info="A Node.js, JavaScript, and Canvas digital journal web app."
             />
             <Work
               title="J.Walls"
               link="https://dcu4.github.io/DCU4.github.io-J_Walls/"
-              img="/jwalls-gif.gif"
+              img="/img/jwalls-gif.gif"
               info="An HTML, SASS/SCSS, and JavaScript website for musician J.Walls (that's me!)."
             />
             <Work
               title="Esther Rivas"
               link="https://dcu4.github.io/DCU4.github.io-Esther-Rivas/index.html"
-              img="/esther.gif"
+              img="/img/esther.gif"
               info="An HTML, SASS/SCSS, and JavaScript website for a friend who is a painter."
             />
           </main>
