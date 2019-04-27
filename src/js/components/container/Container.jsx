@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Nav from "../presentational/Nav.jsx";
 import About from "../presentational/About.jsx";
 import { Work } from "../presentational/Work.jsx";
-// import esther from "./img/esther.gif";
 
 class Container extends Component {
   constructor(props) {
@@ -43,7 +42,7 @@ class Container extends Component {
             <Work
               title="Avnoe"
               link="https://kee-app.herokuapp.com/login"
-              img="img/esther.gif"
+              img="img/drawing-upload-final.gif"
               info="A Node.js, JavaScript, and Canvas digital journal web app."
             />
             <Work
