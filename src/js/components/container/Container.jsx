@@ -7,10 +7,11 @@ import { Work } from "../presentational/Work.jsx";
 class Container extends Component {
   constructor(props) {
     super(props);
-    // this.showWork = this.showWork.bind(this);
     this.handleShow = this.handleShow.bind(this);
+    this.handleMode = this.handleMode.bind(this);
     this.state = {
-      isAboutShowing: false
+      isAboutShowing: false,
+      darkMode: false
     };
   }
 
@@ -23,20 +24,37 @@ class Container extends Component {
     );
   }
 
+  handleMode() {
+    this.setState(
+      {
+        darkMode: this.state.darkMode == false ? true : false
+      },
+      // () => this.state.darkMode ? document.body.classList ='dark-mode' : ''
+    );
+  }
+
+  
+
   render() {
+    
     const isAboutShowing = this.state.isAboutShowing;
+    const darkMode = this.state.darkMode;
+    darkMode ? document.body.classList = 'dark-mode' : document.body.classList =  '';
 
     return (
-      <div className="container">
+      <div className={darkMode ? 'container dark-mode' : 'container'}>
         <header>
           <h1 className="title">
-            <a href="/">Dylan Connor</a>
+            <a className={darkMode ? 'dark-mode' : ''} href="/">Dylan Connor</a>
           </h1>
+          <p onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</p>
         </header>
-        <Nav onClick={this.handleShow} />
+        <Nav onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
 
         {isAboutShowing ? (
-          <About />
+          <About
+          darkMode={darkMode ? 'dark-mode' : ''}
+          />
         ) : (
           <main>
             <Work
@@ -44,18 +62,21 @@ class Container extends Component {
               link="https://kee-app.herokuapp.com/login"
               img="img/drawing-upload-final.gif"
               info="A Node.js, JavaScript, and Canvas digital journal web app."
+              darkMode={darkMode ? 'dark-mode' : ''}
             />
             <Work
               title="J.Walls"
               link="https://dcu4.github.io/DCU4.github.io-J_Walls/"
               img="img/jwalls-gif.gif"
               info="An HTML, SASS/SCSS, and JavaScript website for musician J.Walls (that's me!)."
+              darkMode={darkMode ? 'dark-mode' : ''}
             />
             <Work
               title="Esther Rivas"
               link="https://dcu4.github.io/DCU4.github.io-Esther-Rivas/index.html"
               img="img/esther.gif"
               info="An HTML, SASS/SCSS, and JavaScript website for a friend who is a painter."
+              darkMode={darkMode ? 'dark-mode' : ''}
             />
           </main>
         )}

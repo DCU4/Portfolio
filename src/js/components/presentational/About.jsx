@@ -18,7 +18,7 @@ export default class About extends Component {
             }
 
         ];
-        const contactItems = contactInfo.map((items,i) => <p key={i}><a  data-text="__________" href={items.link} className="contact-link">{items.title}</a></p>)
+        const contactItems = contactInfo.map((items,i) => <p key={i}><a data-text="__________" href={items.link} className={"contact-link "+this.props.darkMode}>{items.title}</a></p>)
         return (
 
             <section className="about info">
