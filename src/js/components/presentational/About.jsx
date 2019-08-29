@@ -23,7 +23,7 @@ export default class About extends Component {
 
             <section className="about info">
                 <h4>Hello.</h4>
-                <p className="bio">I am an aspiring front end developer and digital marketer keen on working to help small businesses grow. I am experienced in HTML5, CSS3, PHP, and JavaScript. I am also skilled at social media outreach, content writing, and audio and video production. I am an American-Irish dual citizen living in Alexandria, VA. Feel free to contact me if you would like to work or chat! I am currently working at <a className="job" href="https://www.req.co">REQ</a> in Washington, DC.</p>
+                <p className="bio">I am an aspiring front end developer and digital marketer keen on working to help small businesses grow. I am experienced in HTML5, CSS3, PHP, and JavaScript. I am also skilled at social media outreach, content writing, and audio and video production. I am an American-Irish dual citizen living in Alexandria, VA. Feel free to contact me if you would like to work or chat! I am currently working at <a className={this.props.darkMode ? 'dark-mode job' : 'job'} href="https://www.req.co">REQ</a> in Washington, DC.</p>
                 <p>This portfolio site was made with React and SASS/SCSS, and it is hosted on Github Pages.</p>
                 <div className="contact">
                     {contactItems}

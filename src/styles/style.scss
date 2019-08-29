@@ -29,8 +29,8 @@ body {
       padding: 0 5%;
       margin: 0 auto;
       justify-content: center;
-      
-    
+
+
       @media only screen and (min-width: 1080px) {
         display: grid;
         grid-template-columns: 110px 4fr;
@@ -45,7 +45,6 @@ body {
         color: #444;
         // width: 100%;
         position: relative;
-        height: 100px;
         // margin: 0 auto;
         overflow: hidden;
 
@@ -129,7 +128,7 @@ body {
                   border-bottom: 1px solid #dadada;
                 }
               }
-              
+
             }
           }
         }
@@ -230,6 +229,9 @@ body {
             padding-bottom: 0px;
             margin-bottom: 0px;
             border-bottom: solid 1px #444;
+            &.dark-mode {
+              border-bottom: 1px solid #dadada;
+            }
           }
         }
 
@@ -248,7 +250,7 @@ body {
           }
         }
       }
-      
+
     }
   }
 }

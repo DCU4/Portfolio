@@ -33,10 +33,10 @@ class Container extends Component {
     );
   }
 
-  
+
 
   render() {
-    
+
     const isAboutShowing = this.state.isAboutShowing;
     const darkMode = this.state.darkMode;
     darkMode ? document.body.classList = 'dark-mode' : document.body.classList =  '';
@@ -47,7 +47,7 @@ class Container extends Component {
           <h1 className="title">
             <a className={darkMode ? 'dark-mode' : ''} href="/">Dylan Connor</a>
           </h1>
-          <p onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</p>
+          <a className={darkMode ? 'dark-mode' : ''} data-text="__________________" onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</a>
         </header>
         <Nav onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
 
