@@ -6,11 +6,13 @@ export default class About extends Component {
         const contactInfo = [
             {
                 title: 'LinkedIn',
-                link: 'https://www.linkedin.com/in/dylan-connor/'
+                link: 'https://www.linkedin.com/in/dylan-connor/',
+                // icon:
             },
             {
                 title: 'Github',
-                link: 'https://github.com/DCU4'
+                link: 'https://github.com/DCU4',
+                icon: this.props.darkMode ? '/img/GitHub-Mark-64px.png' : '/img/GitHub-Mark-Light-64px.png'
             },
             {
                 title: 'Email',
