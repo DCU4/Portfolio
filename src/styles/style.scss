@@ -104,10 +104,12 @@ body {
           writing-mode: vertical-lr;
           position: absolute;
           top: 4%;
+          left: 4%;
           transform: rotateZ(180deg);
           @media only screen and (min-width: 1080px) {
             writing-mode: initial;
             transform: rotateZ(0deg);
+            font-size: 1.5rem;
           }
          
         }
