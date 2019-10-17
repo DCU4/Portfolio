@@ -43,6 +43,7 @@ class Container extends Component {
 
     return (
       <div className={darkMode ? 'container dark-mode' : 'container'}>
+       
         <header>
           <h1 className="title">
             <a className={darkMode ? 'dark-mode' : ''} href="/">Dylan Connor</a>
@@ -52,11 +53,30 @@ class Container extends Component {
         <Nav onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
 
         {isAboutShowing ? (
-          <About
-          darkMode={darkMode ? 'dark-mode' : ''}
-          />
+          <main>
+             <div className={darkMode ? 'grid dark-mode' : 'grid'}>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+
+        </div>
+            <About
+              darkMode={darkMode ? 'dark-mode' : ''}
+            />
+          </main>
+          
         ) : (
           <main>
+             <div className={darkMode ? 'grid dark-mode' : 'grid'}>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+          <span className="grid-item"></span>
+
+        </div>
             <Work
               title="Avnoe"
               link="https://kee-app.herokuapp.com/login"
