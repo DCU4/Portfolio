@@ -46,9 +46,9 @@ class Container extends Component {
        
         <header>
           <h1 className="title">
-            <a className={darkMode ? 'dark-mode' : ''} href="/">Dylan Connor</a>
+            <a className={darkMode ? ' dark-mode' : ''} href="/">Dylan Connor</a>
           </h1>
-          <a className={darkMode ? 'dark-mode' : ''} data-text="__________________" onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</a>
+          <a className={darkMode ? 'dark-mode color-pref' : ' color-pref'} data-text="__________________" onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</a>
         </header>
         <Nav onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
 

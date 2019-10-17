@@ -93,10 +93,23 @@ body {
         }
 
         .title {
-          font-size: 3rem;
+          font-size: 5rem;
           opacity: 0;
           text-align: center;
           animation: fade-in-right ease 0.4s forwards;
+        }
+        .color-pref {
+          font-size: 2.5rem;
+          line-height: 1.55;
+          writing-mode: vertical-lr;
+          position: absolute;
+          top: 4%;
+          transform: rotateZ(180deg);
+          @media only screen and (min-width: 1080px) {
+            writing-mode: initial;
+            transform: rotateZ(0deg);
+          }
+         
         }
       }
 
@@ -120,8 +133,8 @@ body {
             animation: fade-in-right ease 0.8s forwards;
 
             .link {
-              font-size: 2em;
-
+              font-size: 4rem;
+              line-height: 1.55;
               @media only screen and (min-width: 1080px) {
                 font-size: 1em;
               }
@@ -260,8 +273,13 @@ body {
   
           h4 {
             margin-bottom: 4%;
+            font-size: 4rem;
+            line-height: 1.55;
           }
-  
+          p {
+            font-size: 4rem;
+            line-height: 1.55;
+          }
           .bio {
             margin: 40px 0;
   
@@ -277,12 +295,17 @@ body {
   
           .contact {
             display: flex;
-            margin-top: 4%;
+            margin: 4% 0;
             position: relative;
-  
+            justify-content: space-between;
+            @media only screen and (min-width: 1080px) {
+              justify-content: unset;
+            }
+            
             .contact-link {
-              margin-right: 20px;
-              font-size: 40px;
+              margin-right: 30px;
+              font-size: 4rem;
+              line-height: 1.55;
   
               @media only screen and (min-width: 1080px) {
                 font-size: 1em;
