@@ -22,7 +22,7 @@ export default class About extends Component {
 
         ];
         const contactItems = contactInfo.map((items,i) =>
-            <a  key={i} href={items.link} className={"contact-link "+this.props.darkMode}>
+            <a target="_blank" key={i} href={items.link} className={"contact-link "+this.props.darkMode}>
               <img src={items.icon}alt={items.title}/>
             </a>
         )

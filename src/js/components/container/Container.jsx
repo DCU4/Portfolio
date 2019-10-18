@@ -16,21 +16,15 @@ class Container extends Component {
   }
 
   handleShow() {
-    this.setState(
-      {
-        isAboutShowing: this.state.isAboutShowing == false ? true : false
-      },
-      // () => console.log(this.state)
-    );
+    this.setState({
+      isAboutShowing: this.state.isAboutShowing == false ? true : false
+    });
   }
 
   handleMode() {
-    this.setState(
-      {
-        darkMode: this.state.darkMode == false ? true : false
-      },
-      // () => this.state.darkMode ? document.body.classList ='dark-mode' : ''
-    );
+    this.setState({
+      darkMode: this.state.darkMode == false ? true : false
+    });
   }
 
 
@@ -43,7 +37,7 @@ class Container extends Component {
 
     return (
       <div className={darkMode ? 'container dark-mode' : 'container'}>
-       
+
         <header>
           <h1 className="title">
             <a className={darkMode ? ' dark-mode' : ''} href="/">Dylan Connor</a>
@@ -60,16 +54,18 @@ class Container extends Component {
           <span className="grid-item"></span>
           <span className="grid-item"></span>
           <span className="grid-item"></span>
+          <span className="grid-item"></span>
 
         </div>
             <About
               darkMode={darkMode ? 'dark-mode' : ''}
             />
           </main>
-          
+
         ) : (
           <main>
              <div className={darkMode ? 'grid dark-mode' : 'grid'}>
+          <span className="grid-item"></span>
           <span className="grid-item"></span>
           <span className="grid-item"></span>
           <span className="grid-item"></span>
