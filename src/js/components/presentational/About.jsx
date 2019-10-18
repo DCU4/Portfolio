@@ -7,20 +7,27 @@ export default class About extends Component {
             {
                 title: 'LinkedIn',
                 link: 'https://www.linkedin.com/in/dylan-connor/',
-                // icon:
+                icon: '/img/linkedin.svg'
             },
             {
                 title: 'Github',
                 link: 'https://github.com/DCU4',
-                icon: this.props.darkMode ? '/img/GitHub-Mark-64px.png' : '/img/GitHub-Mark-Light-64px.png'
+                icon: !this.props.darkMode ? '/img/GitHub-Mark-64px.png' : '/img/GitHub-Mark-Light-64px.png'
             },
             {
                 title: 'Email',
-                link: 'mailto:DylanJConnor4@gmail.com'
+                link: 'mailto:DylanJConnor4@gmail.com',
+                icon: '/img/email.svg'
             }
 
         ];
-        const contactItems = contactInfo.map((items,i) => <p key={i}><a data-text="__________" href={items.link} className={"contact-link "+this.props.darkMode}>{items.title}</a></p>)
+        const contactItems = contactInfo.map((items,i) =>
+          <p key={i}>
+            <a data-text="__________" href={items.link} className={"contact-link "+this.props.darkMode}>
+              <img src={items.icon}alt={items.title}/>
+            </a>
+          </p>
+        )
         return (
 
             <section className="about info">
