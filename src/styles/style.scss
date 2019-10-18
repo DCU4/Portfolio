@@ -28,12 +28,12 @@ body {
       flex-direction: column;
       padding: 0 5%;
       margin: 0 auto;
-      // justify-content: center; 
+      // justify-content: center;
       // height: 100vh;
       width: 100%;
       overflow: hidden;
 
-      @media only screen and (min-width: 1080px) {
+      @media only screen and (min-width: 760px) {
         display: grid;
         grid-template-columns: 110px 4fr;
         grid-template-rows: 150px 3fr;
@@ -41,7 +41,7 @@ body {
           "header header"
           "nav info";
       }
-      
+
 
       a {
         text-decoration: none;
@@ -111,7 +111,7 @@ body {
             transform: rotateZ(0deg);
             font-size: 1.5rem;
           }
-         
+
         }
       }
 
@@ -206,7 +206,7 @@ body {
           @media only screen and (min-width: 1080px) {
             padding-bottom: 0px;
           }
-          
+
           section {
             display: flex;
             align-items: center;
@@ -214,10 +214,10 @@ body {
             flex-direction: column;
 
             @media only screen and (min-width: 1080px) {
-              align-items:unset;
+              display:block;
             }
 
-            h1 {
+            a{
               font-size: 50px;
               text-transform: uppercase;
               font-weight: 300;
@@ -267,12 +267,12 @@ body {
             }
           }
         }
-      
+
         .about {
           grid-area: info;
           height: auto;
           flex-wrap: wrap;
-  
+
           h4 {
             margin-bottom: 4%;
             font-size: 4rem;
@@ -287,7 +287,7 @@ body {
           }
           .bio {
             margin: 40px 0;
-  
+
             a {
               padding-bottom: 0px;
               margin-bottom: 0px;
@@ -297,7 +297,7 @@ body {
               }
             }
           }
-  
+
           .contact {
             display: flex;
             margin: 4% 0;
@@ -306,14 +306,21 @@ body {
             @media only screen and (min-width: 1080px) {
               justify-content: unset;
             }
-            
-            .contact-link {
+
+            a.contact-link {
               margin-right: 30px;
               font-size: 4rem;
               line-height: 1.55;
-  
+
               @media only screen and (min-width: 1080px) {
                 font-size: 1em;
+              }
+              &::before {
+                display:none;
+              }
+              img {
+                width: 50px;
+                height: auto;
               }
             }
           }
