@@ -7,7 +7,7 @@ export default class About extends Component {
             {
                 title: 'LinkedIn',
                 link: 'https://www.linkedin.com/in/dylan-connor/',
-                icon: '/img/linkedin.svg'
+                icon: !this.props.darkMode ? '/img/LI.png' : 'img/LI-dark.png'
             },
             {
                 title: 'Github',
@@ -17,16 +17,14 @@ export default class About extends Component {
             {
                 title: 'Email',
                 link: 'mailto:DylanJConnor4@gmail.com',
-                icon: '/img/email.svg'
+                icon: !this.props.darkMode ? '/img/email-icon.png' : '/img/email-icon-dark.png'
             }
 
         ];
         const contactItems = contactInfo.map((items,i) =>
-          <p key={i}>
-            <a data-text="__________" href={items.link} className={"contact-link "+this.props.darkMode}>
+            <a  key={i} href={items.link} className={"contact-link "+this.props.darkMode}>
               <img src={items.icon}alt={items.title}/>
             </a>
-          </p>
         )
         return (
 
