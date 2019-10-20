@@ -12,7 +12,7 @@ export default class About extends Component {
             {
                 title: 'Github',
                 link: 'https://github.com/DCU4',
-                icon: !this.props.darkMode ? '/img/GitHub-Mark-64px.png' : '/img/GitHub-Mark-Light-64px.png'
+                icon: !this.props.darkMode ? '/img/GitHub-Mark-120px-plus.png' : '/img/GitHub-Mark-Light-120px-plus.png'
             },
             {
                 title: 'Email',

@@ -35,11 +35,11 @@ body {
 
       @media only screen and (min-width: 1080px) {
         display: grid;
-        grid-template-columns: 110px 4fr;
-        grid-template-rows: 150px 50%;
+        grid-template-columns: 110px 4fr 1fr;
+        grid-template-rows: 150px 500px;
         grid-template-areas:
-          "header header"
-          "nav info";
+          "header header header"
+          "info info info";
       }
 
 
@@ -58,7 +58,7 @@ body {
           }
         }
         &::before {
-          margin: 5px auto;
+          margin: 7px auto;
           width: 0px;
           color: #444;
           overflow: hidden;
@@ -87,18 +87,69 @@ body {
       header {
         grid-area: header;
         margin: 4% 0;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        flex-direction: column;
 
         @media only screen and (min-width: 1080px) {
-          margin: 0;
+          flex-direction: row;
         }
 
         .title {
           font-size: 5rem;
           opacity: 0;
           text-align: center;
-          animation: fade-in-right ease 0.4s forwards;
+          animation: fade-in-right 0.5s ease  forwards;
+          padding-bottom: 20px;
+          @media only screen and (min-width: 1080px) {
+            padding-bottom: 0px;
+          }
+        }
+        nav {
+          // @media only screen and (min-width: 1080px) {
+          //   grid-area: header;
+          // }
+          z-index: 2;
+  
+          .menu {
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+            opacity: 0;
+            animation: fade-in-right 0.4s ease  forwards;
+            animation-delay: 0.2s;
+            // @media only screen and (min-width: 1080px) {
+            //   flex-direction: column;
+            // }
+  
+            .menu-item {
+              margin: 0 20px;
+              
+              
+  
+              .link {
+                font-size: 4rem;
+                line-height: 1.55;
+                @media only screen and (min-width: 1080px) {
+                  font-size: 1.5em;
+                }
+                &.selected {
+                  border-bottom: 2px solid #444;
+                  &.dark-mode {
+                    border-bottom: 2px solid #dadada;
+                  }
+                }
+  
+              }
+            }
+          }
         }
         .color-pref {
+          z-index: 2;
+          opacity: 0;
+          animation: fade-in-right 0.4s ease  forwards;
+          animation-delay: 0.3s;
           font-size: 2.5rem;
           line-height: 1.55;
           writing-mode: vertical-lr;
@@ -107,6 +158,7 @@ body {
           left: 4%;
           transform: rotateZ(180deg);
           @media only screen and (min-width: 1080px) {
+            position: relative;
             writing-mode: initial;
             transform: rotateZ(0deg);
             font-size: 1.5rem;
@@ -115,45 +167,16 @@ body {
         }
       }
 
-      nav {
-        @media only screen and (min-width: 1080px) {
-          grid-area: nav;
-        }
-
-        .menu {
-          display: flex;
-          justify-content: space-evenly;
-          list-style-type: none;
-
-          @media only screen and (min-width: 1080px) {
-            flex-direction: column;
-          }
-
-          .menu-item {
-            margin-bottom: 8%;
-            opacity: 0;
-            animation: fade-in-right ease 0.8s forwards;
-
-            .link {
-              font-size: 4rem;
-              line-height: 1.55;
-              @media only screen and (min-width: 1080px) {
-                font-size: 1em;
-              }
-              &.selected {
-                border-bottom: 1px solid #444;
-                &.dark-mode {
-                  border-bottom: 1px solid #dadada;
-                }
-              }
-
-            }
-          }
-        }
-      }
+      
 
       main {
         position: relative;
+        padding-top: 50px;
+        grid-area: info;
+        opacity: 0;
+        // visibility: hidden;
+        animation: fade-in 0.6s ease  forwards;
+        animation-delay: 0.5s;
         .grid {
           position: absolute;
           display: grid;
@@ -161,8 +184,8 @@ body {
           grid-template-rows: repeat(10, 80px [row-start]);
           transform-origin: 0;
           transform: skewY(-10deg);
-          top: 50%;
-          right: -50%;
+          top: 20%;
+          right: -45%;
           z-index: -1;
           &.dark-mode {
             .grid-item {
@@ -202,14 +225,14 @@ body {
         }
 
         .work {
-          grid-area: info;
+          // grid-area: info;
           width: 100%;
           height: auto;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-around;
           flex-direction: column;
-          padding-bottom: 80px;
+          padding-bottom: 120px;
           @media only screen and (min-width: 1080px) {
             padding-bottom: 0px;
           }
@@ -227,8 +250,10 @@ body {
             a{
               font-size: 50px;
               text-transform: uppercase;
-              font-weight: 300;
-
+              font-weight: 500;
+              @media only screen and (min-width: 1080px) {
+                font-weight: 300;
+              }
               &:hover ~ .project {
                 opacity: 1;
                 z-index: 100;
@@ -276,14 +301,16 @@ body {
         }
 
         .about {
-          grid-area: info;
-          height: auto;
-          flex-wrap: wrap;
+          display: flex;
+          flex-direction: column;
+          // overflow: hidden;
 
           h4 {
-            margin-bottom: 4%;
-            font-size: 4rem;
+            font-size: 3.5rem;
             line-height: 1.55;
+            @media only screen and (min-width: 1080px) {
+              font-size: 2.75rem;
+            }
           }
           p {
             font-size: 4rem;
@@ -307,12 +334,13 @@ body {
 
           .contact {
             display: flex;
-            margin: 4% 0;
+            margin: 40px 0;
             position: relative;
             justify-content: space-between;
             align-items: center;
             @media only screen and (min-width: 1080px) {
               justify-content: unset;
+              margin: 20px 0;
             }
 
             a.contact-link {
@@ -327,8 +355,11 @@ body {
                 display:none;
               }
               img {
-                width: 50px;
+                width: 100px;
                 height: auto;
+                @media only screen and (min-width: 1080px) {
+                  width: 50px;
+                }
               }
             }
           }
@@ -361,11 +392,11 @@ body {
 
 @keyframes grow-left {
   from {
-    transform: scaleX(0);
+    transform: translateX(20px);
   }
 
   to {
-    transform: scaleX(1);
+    transform: translateX(0px)
   }
 }
 
