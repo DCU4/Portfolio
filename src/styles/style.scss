@@ -16,6 +16,9 @@ body {
   height:100%;
   background-color: #dadada ;
   color: #444;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+
   &.dark-mode {
     background-color: #444 ;
     color: #dadada
@@ -36,7 +39,7 @@ body {
       @media only screen and (min-width: 1080px) {
         display: grid;
         grid-template-columns: 110px 4fr 1fr;
-        grid-template-rows: 150px 500px;
+        grid-template-rows: 150px 510px;
         grid-template-areas:
           "header header header"
           "info info info";
@@ -177,6 +180,7 @@ body {
         // visibility: hidden;
         animation: fade-in 0.6s ease  forwards;
         animation-delay: 0.5s;
+
         .grid {
           position: absolute;
           display: grid;
@@ -233,6 +237,7 @@ body {
           justify-content: space-around;
           flex-direction: column;
           padding-bottom: 120px;
+          animation: fade-in 0.5s ease  forwards;
           @media only screen and (min-width: 1080px) {
             padding-bottom: 0px;
           }
@@ -303,6 +308,8 @@ body {
         .about {
           display: flex;
           flex-direction: column;
+          animation: fade-in 0.5s ease  forwards;
+
           // overflow: hidden;
 
           h4 {
