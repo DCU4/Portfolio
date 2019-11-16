@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 
 export default class About extends Component {
 
+  componentDidMount() {
+    console.log('mount');
+    let component = document.querySelector('.about');
+    component.classList.add('showing');
+  }
+
+  componentWillUnmount() {
+    console.log('unmount');
+  }
+
     render() {
         const contactInfo = [
             {
