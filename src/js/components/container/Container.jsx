@@ -29,6 +29,8 @@ class Container extends Component {
 
 
 
+
+
   render() {
 
     const isAboutShowing = this.state.isAboutShowing;
@@ -48,7 +50,7 @@ class Container extends Component {
         </header>
         
         {isAboutShowing ? (
-          <main>
+          <main className="aboutShowing">
              <div className={darkMode ? 'grid dark-mode' : 'grid'}>
           <span className="grid-item"></span>
           <span className="grid-item"></span>
@@ -64,7 +66,7 @@ class Container extends Component {
           </main>
 
         ) : (
-          <main>
+          <main className="workShowing">
              <div className={darkMode ? 'grid dark-mode' : 'grid'}>
           <span className="grid-item"></span>
           <span className="grid-item"></span>
