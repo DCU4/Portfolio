@@ -16,25 +16,20 @@ export default class About extends Component {
         const contactInfo = [
             {
                 title: 'LinkedIn',
-                link: 'https://www.linkedin.com/in/dylan-connor/',
-                icon: !this.props.darkMode ? '/img/LI.png' : 'img/LI-dark.png'
+                link: 'https://www.linkedin.com/in/dylan-connor/'
             },
             {
                 title: 'Github',
-                link: 'https://github.com/DCU4',
-                icon: !this.props.darkMode ? '/img/GitHub-Mark-120px-plus.png' : '/img/GitHub-Mark-Light-120px-plus.png'
+                link: 'https://github.com/DCU4'
             },
             {
                 title: 'Email',
-                link: 'mailto:DylanJConnor4@gmail.com',
-                icon: !this.props.darkMode ? '/img/email-icon.png' : '/img/email-icon-dark.png'
+                link: 'mailto:DylanJConnor4@gmail.com'
             }
 
         ];
         const contactItems = contactInfo.map((items,i) =>
-            <a target="_blank" key={i} href={items.link} className={"contact-link "+this.props.darkMode}>
-              <img src={items.icon}alt={items.title}/>
-            </a>
+            <a data-text="__________________" target="_blank" key={i} href={items.link} className={"contact-link "+this.props.darkMode}>{items.title}</a>
         )
         return (
 
