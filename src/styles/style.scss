@@ -173,6 +173,10 @@ body {
             font-size: 1.5rem;
           }
 
+          &::before {
+            bottom: -4px;
+          }
+
         }
       }
 
@@ -202,7 +206,7 @@ body {
           top: -50%;
           right: -45%;
           z-index: -1;
-          transition: all .5s ;
+          transition: all .8s ;
           &.dark-mode {
             .grid-item {
               border-color: rgba(218, 218, 218, 0.2);
