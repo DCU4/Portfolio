@@ -2,7 +2,8 @@ This is my personal portfolio. It features three recent projects that I have bui
 
 https://dcu4.github.io/Portfolio/
 
+`npm run install`
 
-npm run start - dev
+`npm run start` - dev
 
-npm run build - prod build
+`npm run build` - prod build
