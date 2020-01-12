@@ -184,8 +184,13 @@ body {
         grid-area: info;
         opacity: 0;
         // visibility: hidden;
-        animation: fade-in 0.6s ease  forwards;
+        animation: fade-in-right 0.6s ease  forwards;
         animation-delay: 0.5s;
+
+        &.aboutShowing {
+          opacity: 0;
+          animation: fade-in-right 0.6s ease-out 1s forwards;
+        }
 
         .grid {
           position: absolute;
@@ -194,7 +199,7 @@ body {
           grid-template-rows: repeat(10, 80px [row-start]);
           transform-origin: 0;
           transform: translate(-20px, 15px) skew(-4deg, 1.5deg);
-          top: 0%;
+          top: -50%;
           right: -45%;
           z-index: -1;
           transition: all .5s ;
@@ -290,6 +295,9 @@ body {
               font-weight: 500;
               @media only screen and (min-width: 1080px) {
                 font-weight: 300;
+              }
+              &::before {
+                bottom: -4px;
               }
               &:hover ~ .project {
                 opacity: 1;
@@ -395,7 +403,7 @@ body {
                 font-size: 1em;
               }
               &::before {
-                display:none;
+                bottom: -7px;
               }
               img {
                 width: 100px;
