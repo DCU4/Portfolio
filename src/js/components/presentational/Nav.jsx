@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-const active = ' selected';
-const notActive = 'link';
-
 export default class Nav extends Component {
   constructor(props) {
     super(props);

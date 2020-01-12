@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// export {esther} from './img/esther.gif';
-
 
 
 export const Work = (props) => {
