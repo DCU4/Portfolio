@@ -78,7 +78,7 @@ class Container extends Component {
     
     let updateTransformStyle = function(x, y) {
       // let style = "skewX(" + ( y*50) + "deg) skewY(" +x*25  + "deg)";
-      let style = `translate(${y*250}px, ${x*250}px ) skew(${y*50}deg, ${x*25}deg)`;
+      let style = `translate(${y*250}px, ${x*250}px ) skew(${y*25}deg, ${x*10}deg)`;
       // let style = `rotate(${x/y}deg)`;
       inner.style.transform = style;
       inner.style.webkitTransform = style;
