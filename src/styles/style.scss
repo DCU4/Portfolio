@@ -111,6 +111,7 @@ body {
           text-align: center;
           animation: fade-in-right 0.5s ease  forwards;
           padding-bottom: 20px;
+          z-index: 99;
           @media only screen and (min-width: 1080px) {
             padding-bottom: 0px;
           }

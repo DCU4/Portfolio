@@ -31,9 +31,9 @@ export default class Nav extends Component {
     const navItems = navList.map((items,i) =>
     <li onClick={items.class ? null : this.props.onClick} key={i} className="menu-item ">
       {this.props.darkMode ? (
-        <a onClick={ items.class ? null : this.handleChange}  data-text="_______" className={items.class===true ? 'dark-mode link selected' : 'dark-mode link'}  href="#">{items.title}</a>) 
+        <a onClick={ items.class ? null : this.handleChange}  data-text="_______" className={items.class===true ? 'dark-mode link selected' : 'dark-mode link'}  href={`#${items.title.toLowerCase()}`}>{items.title}</a>) 
         : ( 
-        <a onClick={ items.class ? null : this.handleChange}  data-text="_______" className={items.class===true ? 'link selected' : 'link'}  href="#">{items.title}</a>
+        <a onClick={ items.class ? null : this.handleChange}  data-text="_______" className={items.class===true ? 'link selected' : 'link'}  href={`#${items.title.toLowerCase()}`}>{items.title}</a>
       )}
     </li>
     )
