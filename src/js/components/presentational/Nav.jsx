@@ -10,6 +10,9 @@ export default class Nav extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange() {
+    // let body = document.querySelector('body');
+    // body.style.opacity = '0';
+    this.props.navigateAnimation();
     this.setState({
       isActive: this.state.isActive ? false : true
       
