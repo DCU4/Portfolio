@@ -11,7 +11,8 @@ class Container extends Component {
     this.handleMode = this.handleMode.bind(this);
     this.state = {
       isAboutShowing: false,
-      darkMode: false
+      darkMode: false,
+      animationClass: ''
     };
     
   }
@@ -69,7 +70,7 @@ class Container extends Component {
 
     let update = function(event) {
       mouse.updatePosition(event);
-      console.log(mouse,inner.offsetHeight);
+      // console.log(mouse,inner.offsetHeight);
       updateTransformStyle(
         (mouse.y / inner.offsetHeight/2).toFixed(2),
         (mouse.x / inner.offsetWidth/2).toFixed(2)
@@ -79,6 +80,7 @@ class Container extends Component {
     let updateTransformStyle = function(x, y) {
       // let style = "skewX(" + ( y*50) + "deg) skewY(" +x*25  + "deg)";
       let style = `translate(${y*250}px, ${x*250}px ) skew(${y*25}deg, ${x*10}deg)`;
+      // console.log(style);
       // let style = `rotate(${x/y}deg)`;
       inner.style.transform = style;
       inner.style.webkitTransform = style;
@@ -90,6 +92,28 @@ class Container extends Component {
       update(e);
     }
 
+  }
+
+  navigateAnimation = () => {
+    this.setState({
+      animationClass: this.state.isAboutShowing ? '' : 'navigate'
+    })
+  }
+
+  componentDidMount(){
+    console.log('mount');
+    let grid = document.querySelector('.grid');
+    grid.classList.add('reveal');
+    if (document.querySelector('#splash')) {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#splash').addEventListener('transitionend', function (event) {
+          // event.target.remove()
+        });
+        requestAnimationFrame(function () {
+          document.querySelector('#splash').classList.add('animate');
+        });
+      });
+    }
   }
 
 
@@ -106,13 +130,13 @@ class Container extends Component {
     
 
     return (
-      <div  onMouseMove={this.handleMove}  className={darkMode ? 'container dark-mode' : 'container'}>
-
+      <div  onMouseMove={this.handleMove}  className={darkMode ? 'container dark-mode' : `container ${this.state.animationClass}`}>
+        <div id="splash" className={darkMode ? `dark-mode ${this.state.animationClass}` : `${this.state.animationClass}`}></div>
         <header>
           <h1 className="title">
             <a className={darkMode ? ' dark-mode' : ''} href="/">Dylan Connor</a>
           </h1>
-          <Nav onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
+          <Nav navigateAnimation={this.navigateAnimation} onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
           <a className={darkMode ? 'dark-mode color-pref' : ' color-pref'} data-text="__________________" onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</a>
         
         </header>
