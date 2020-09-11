@@ -37,21 +37,14 @@ body {
       flex-direction: column;
       padding: 0 5%;
       margin: 0 auto;
-      // justify-content: center;
       height: 100vh;
       width: 100%;
       overflow: hidden;
       position: relative;
-      // @media only screen and (min-width: 1080px) {
-      //   display: grid;
-      //   grid-template-columns: 110px 4fr 1fr;
-      //   grid-template-rows: 150px 510px;
-      //   grid-template-areas:
-      //     "header header header"
-      //     "info info info";
-      // }
 
-
+      @media all and (max-width: 980px) {
+        overflow: auto;
+      }
       a {
         text-decoration: none;
         color: #444;
@@ -413,7 +406,7 @@ body {
               }
 
               @media only screen and (min-width: 1080px) {
-                font-size: 1em;
+                font-size: 1.5em;
               }
               &::before {
                 bottom: -7px;
