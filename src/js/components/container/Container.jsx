@@ -8,23 +8,21 @@ import { handleMove } from '../container/handleMove.js';
 class Container extends Component {
   constructor(props) {
     super(props);
-    this.handleShow = this.handleShow.bind(this);
-    this.handleMode = this.handleMode.bind(this);
     this.state = {
       isAboutShowing: false,
-      darkMode: false,
+      darkMode: true,
       animationClass: ''
     };
     
   }
 
-  handleShow() {
+  handleShow = () => {
     this.setState({
       isAboutShowing: this.state.isAboutShowing == false ? true : false
     });
   }
 
-  handleMode() {
+  handleMode = () =>{
     this.setState({
       darkMode: this.state.darkMode == false ? true : false
     });
@@ -36,21 +34,6 @@ class Container extends Component {
     })
   }
 
-  componentDidMount(){
-    console.log('mount');
-    let grid = document.querySelector('.grid');
-    grid.classList.add('reveal');
-    if (document.querySelector('#splash')) {
-      document.addEventListener('DOMContentLoaded', function () {
-        requestAnimationFrame(function () {
-          document.querySelector('#splash').classList.add('animate');
-        });
-      });
-    }
-  }
-
-
-
 
 
   render() {
@@ -58,9 +41,14 @@ class Container extends Component {
     const isAboutShowing = this.state.isAboutShowing;
     const darkMode = this.state.darkMode;
     darkMode ? document.body.classList = 'dark-mode' : document.body.classList =  '';
-    
 
-    
+    let createGridItem = (n) => {
+      let items = [];
+      for(let i = 0; i < n; i++) {
+        items.push(<span className="grid-item"></span>);
+      }
+      return items;
+    }
 
     return (
       <div  onMouseMove={handleMove}  className={darkMode ? 'container dark-mode' : `container ${this.state.animationClass}`}>
@@ -70,20 +58,14 @@ class Container extends Component {
             <a className={darkMode ? ' dark-mode' : ''} href="/">Dylan Connor</a>
           </h1>
           <Nav navigateAnimation={this.navigateAnimation} onClick={this.handleShow} darkMode={darkMode ? 'dark-mode' : ''} />
-          <a className={darkMode ? 'dark-mode color-pref' : ' color-pref'} data-text="__________________" onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</a>
-        
+          
         </header>
+        <a className={darkMode ? 'dark-mode color-pref' : ' color-pref'}  onClick={this.handleMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</a>
         
         {isAboutShowing ? (
           <main className="aboutShowing">
              <div  className={darkMode ? 'grid dark-mode' : 'grid'}>
-              <span className="grid-item"></span>
-              <span className="grid-item"></span>
-              <span className="grid-item"></span>
-              <span className="grid-item"></span>
-              <span className="grid-item"></span>
-              <span className="grid-item"></span>
-
+              {createGridItem(7)}
             </div>
             <About
               darkMode={darkMode ? 'dark-mode' : ''}
@@ -93,20 +75,8 @@ class Container extends Component {
         ) : (
           <main className="workShowing">
              <div className={darkMode ? 'grid dark-mode' : 'grid'}>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-          <span className="grid-item"></span>
-
-        </div>
+                {createGridItem(10)}
+              </div>
             <Work
               title="Avnoe"
               link="https://kee-app.herokuapp.com/login"
